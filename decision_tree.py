@@ -1,9 +1,9 @@
 print("======= Pohon Keputusan =======\n")
 
-print("Rata_Rata_SMA <= 75")
-print("  True:")
-print("    [Label: Tidak Diterima]")
+print("Rata_Rata_SMA >= 75")
 print("  False:")
+print("    [Label: Tidak Diterima]")
+print("  True:")
 print("    Jurusan_SMA == IPS")
 print("      True:")
 print("        [Label: Sistem Informasi]")
@@ -25,17 +25,17 @@ rata_rata_sma = int(input("Rata-rata Nilai SMA (0-100)       : "))
 nilai_utbk = int(input("Nilai UTBK (0-100)                : "))
 
 # ===== Logika Keputusan =====
-if rata_rata_sma <= 75:
-    hasil = "Tidak Diterima"
-else:
+if rata_rata_sma >= 75:
     if jurusan_sma.upper() == "IPS":
         hasil = "Sistem Informasi"
-    else:  # IPA
+    else:  
         if nilai_utbk <= 75:
             hasil = "RPL"
         elif nilai_utbk <= 85:
             hasil = "Sains Data"
         else:
             hasil = "Informatika"
+else:
+    hasil = "Tidak Diterima"
 
 print("\nHasil Prediksi                    :", hasil)
