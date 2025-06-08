@@ -146,7 +146,7 @@ def print_metrics(tp, fp, fn, tn):
     recall = tp / (tp + fn) if (tp + fn) else 0
     f1 = 2 * prec * recall / (prec + recall) if (prec + recall) else 0
 
-    print("\n📊 Confusion Matrix:")
+    print("\nConfusion Matrix:")
     print(f"TP = {tp}, FP = {fp}, FN = {fn}, TN = {tn}")
     print(f"Akurasi : {acc:.2f}")
     print(f"Presisi : {prec:.2f}")
@@ -158,7 +158,7 @@ def evaluate_verbose(tree, test_data):
     predictions = []
     actuals = []
 
-    print("\n🧪 Contoh Prediksi:")
+    print("\nContoh Prediksi:")
     for i, row in enumerate(test_data[:5]):
         pred = predict(row, tree)
         actual = row["Keterangan"]
@@ -176,9 +176,9 @@ def evaluate_verbose(tree, test_data):
 # 15. Cetak Tree
 def print_tree(node, spacing=""):
     if node.prediction is not None:
-        print(spacing + f"🟩 Predict: {node.prediction}")
+        print(spacing + f"Predict: {node.prediction}")
         return
-    print(spacing + f"🔀 {node.feature} <= {node.threshold}?")
+    print(spacing + f"{node.feature} <= {node.threshold}?")
     print(spacing + "├─ True:")
     print_tree(node.left, spacing + "│   ")
     print(spacing + "└─ False:")
@@ -205,12 +205,12 @@ def main():
 
     print(f"Jumlah Data: {len(data)}")
     print("Fitur yang digunakan:", features, "\n")
-    print("🔍 5 Contoh Data Pertama:")
+    print("5 Contoh Data Pertama:")
     for d in data[:5]:
         print(d)
 
     tree = build_tree(train_data, features)
-    print("\n🌳 Struktur Pohon Keputusan:")
+    print("\nStruktur Pohon Keputusan:")
     print_tree(tree)
 
     evaluate_verbose(tree, test_data)
