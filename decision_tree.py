@@ -196,7 +196,7 @@ def main():
         "Kemampuan Penalaran Umum",
         "Pengetahuan dan Pemahaman Umum",
         "Pengetahuan Kuantitatif",
-        "Sejerah",
+        "Sejarah",
         "Sosiologi",
     ]
 
